@@ -1,0 +1,37 @@
+body {
+    background-image: url(imagen.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.formulario {
+    background: rgba(0, 0, 0, 0.571);
+    padding: 20px;
+    box-shadow: 7px 13px 37px #000;
+}
+
+.form-control {
+    background: rgba(0, 0, 0, 0.3);
+    border-style: none;
+    transition: 0.5s ease-in;
+    outline: none;
+    box-shadow: none;
+}
+
+.ingresar {
+    background: #222A3F;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 700 !important;
+    box-shadow: 7px 13px 37px #000;
+    transition: 0.5s ease-in;
+}
+
+.ingresar:hover {
+    color: white;
+}
+
+.menu{
+    background: rgba(0, 0, 0, 0.567);
+}
