@@ -1,37 +1,11 @@
 import { useState, useEffect } from 'react'
-import { collection, addDoc, deleteDoc, doc, onSnapshot, updateDoc } from 'firebase/firestore'
+import { collection, onSnapshot } from 'firebase/firestore'
 import { listaC } from '../firebase';
 
 
 function ListaClases() {
-    const [materia, setMateria] = useState('')
-    const [descripcion, setDescripcion] = useState('')
-    const [modoEditar, setModoEdiar] = useState(false)
     const [lista, SetLista] = useState([])
-    const [id, setId] = useState('')
 
-    /* const guardar = async (e) => {
-         e.preventDefault();
-         try {
-             const data = await addDoc(collection(listaC, 'cursos'), {
-                 nombreMateria: materia,
-                 InfDescripcion: descripcion
-             })
- 
-             SetLista([
-                 ...lista,
-                 {
-                     nombreMateria: materia,
-                     InfDescripcion: descripcion,
-                     id: data.id
-                 }
-             ])
-             setMateria('')
-             setDescripcion('')
-         } catch (error) {
-             console.log(error)
-         }
-     }*/
 
     useEffect(() => {
         const traerDatos = async () => {
@@ -45,51 +19,6 @@ function ListaClases() {
         }
         traerDatos();
     }, [])
-
-    /* const editar = item => {
-         setMateria(item.nombreMateria)
-         setDescripcion(item.InfDescripcion)
-         setId(item.id)
-         setModoEdiar(true)
-     }*/
-
-    /*  const editarMateria = async e => {
-          e.preventDefault()
-          try {
-              const docRef = doc(listaC, "cursos", id);
-              await updateDoc(docRef, {
-                  nombreMateria: materia,
-                  InfDescripcion: descripcion
-              })
-              const newArray = lista.map(
-                  item => item.id === id ? { id: id, nombreMateria: materia, InfDescripcion: descripcion } : item
-              )
-  
-              SetLista(newArray)
-              setMateria('')
-              setDescripcion('')
-              setId('')
-              setModoEdiar(false)
-  
-          } catch (error) {
-              console.log(error)
-          }
-      }*/
-
-    /* const cancelar = () => {
-         setModoEdiar(false)
-         setMateria('')
-         setDescripcion('')
-         setId('')
-     }*/
-
-    /* const eliminar = async id => {
-         try {
-             await deleteDoc(doc(listaC, 'cursos', id))
-         } catch (error) {
- 
-         }
-     }*/
 
     return (
         <div className='container mt-5'>
